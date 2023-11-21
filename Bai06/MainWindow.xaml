@@ -1,0 +1,55 @@
+﻿<Window x:Class="Bai06.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        FontSize="20"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <GroupBox Header="Sao chép tập tin" BorderThickness="2.0">
+                
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="5">
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label Content="Đường dẫn thư mục nguồn"/>
+                        <TextBox x:Name="Source"  Margin="5 0 0 0" Width="400"/>
+                        <Button Content="..." Margin="5 0 0 0" Width="30" Click="Get_Source"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label Content="Đường dẫn thư mục đích"/>
+                        <TextBox x:Name="Destination" Margin="25 0 0 0" Width="400"/>
+                        <Button Content="..." Margin="5 0 0 0" Width="30" Click="Get_Des"/>
+
+                    </StackPanel>
+
+                    
+                    <Button Content="Sao chép" Padding="5" Margin="0 10 0 0" Click="Copy" Width="200"/>
+
+
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+
+
+        <Grid Grid.Row="1">
+            <GroupBox Header="Tiến trình sao chép" BorderThickness="2.0">
+                <ProgressBar x:Name="Progress" Margin="10 20 10 20"/>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <StatusBar>
+                <StatusBarItem>
+                    <TextBlock Name="statusbar" />
+                </StatusBarItem>
+            </StatusBar>
+        </Grid>
+    </Grid>
+</Window>
